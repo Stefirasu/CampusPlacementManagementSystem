@@ -6,7 +6,7 @@ A full-stack web application to automate campus recruitment — built with
 ## Workflow
 
 - **Student** → Registers → Completes Profile → Applies for Jobs → Tracks Application Status
-- **Recruiter** → Registers → Posts Jobs (admin approval required) → Reviews Applications → Shortlists / Selects Students
+- **Recruiter** → Registers → Posts Jobs (admin approval required) → View Applications → Shortlists / Selects Students
 - **Admin** → Manages Students, Companies/Recruiters, Job Approvals, Placement Drives, and Reports
 
 ## Tech Stack
