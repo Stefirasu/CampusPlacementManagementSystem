@@ -270,3 +270,46 @@ body {
 .card.h-100 {
   min-height: 100%;
 }
+
+
+/* ===== Responsive fixes ===== */
+
+/* Prevent horizontal page scroll on all devices */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Make tables scroll sideways instead of breaking the page layout */
+.table-responsive,
+table {
+  max-width: 100%;
+}
+
+table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .page-card,
+  .dashboard-card {
+    padding: 1.5rem;
+    min-height: auto;
+  }
+
+  .page-heading {
+    font-size: 1.8rem;
+  }
+
+  .hero-bar .display-5 {
+    font-size: 1.6rem;
+  }
+}
