@@ -8,6 +8,8 @@
 body {
   margin: 0;
   min-height: 100vh;
+  font-size: 1.08rem;
+  line-height: 1.55;
   background-color: #f4f6f9;
   background-image: url("../images/CMPS.jpg");
   background-repeat: no-repeat;
@@ -20,12 +22,28 @@ body {
   min-height: 100vh;
 }
 
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.container.py-4,
+.container.py-5 {
+  min-height: calc(100vh - 72px);
+}
+
 .custom-navbar {
   background-color: var(--navy-blue) !important;
+  min-height: 76px;
 }
 
 .navbar-brand {
   font-weight: 700;
+  font-size: 1.45rem;
 }
 
 .custom-navbar .navbar-brand,
@@ -37,6 +55,15 @@ body {
 
 .custom-navbar .btn-outline-light {
   border-color: rgba(255, 255, 255, 0.8);
+}
+
+.custom-navbar .btn,
+.custom-navbar .navbar-text {
+  font-size: 1rem;
+}
+
+.custom-navbar .btn {
+  padding: 0.65rem 1rem;
 }
 
 .nav-auth-btn {
@@ -141,8 +168,8 @@ body {
 }
 
 .brand-logo {
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
   display: block;
 }
@@ -155,8 +182,34 @@ body {
   border-radius: 10px;
 }
 
+.card h5 {
+  font-size: 1.45rem;
+}
+
+.card p {
+  font-size: 1rem;
+}
+
+.container > h3,
+.container > h4 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.container > p {
+  font-size: 1.1rem;
+}
+
 .badge-status {
   font-size: 0.85rem;
+}
+
+.password-input::-ms-reveal,
+.password-input::-ms-clear,
+.password-input::-webkit-credentials-auto-fill-button {
+  display: none !important;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 /* Full-width semi-transparent hero bar */
@@ -207,7 +260,7 @@ body {
 
 /* Page heading and card styling */
 .page-heading {
-  font-size: clamp(2.4rem, 2.5vw, 3.2rem);
+  font-size: 2.6rem;
   font-weight: 700;
   letter-spacing: -0.03em;
   margin-bottom: 1rem;
@@ -237,29 +290,41 @@ body {
 }
 
 .dashboard-card-title {
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 800;
   margin-bottom: 0.9rem;
 }
 
 .dashboard-card-text {
-  font-size: 1.11rem;
+  font-size: 1.2rem;
   margin-bottom: 1.4rem;
   color: #5f6d7a;
 }
 
 .dashboard-card .btn {
-  font-size: 1rem;
-  padding: 0.95rem 1.6rem;
+  font-size: 1.1rem;
+  padding: 1rem 1.7rem;
 }
 
 .page-card h5 {
-  font-size: 1.85rem;
+  font-size: 2rem;
   font-weight: 700;
 }
 
 .page-card p {
-  font-size: 1rem;
+  font-size: 1.15rem;
+}
+
+.card .btn,
+.form-control,
+.form-select,
+.table {
+  font-size: 1.05rem;
+}
+
+.table th,
+.table td {
+  padding: 0.85rem 0.9rem;
 }
 
 .page-card:hover {
@@ -287,16 +352,49 @@ table {
 }
 
 table {
-  display: block;
-  overflow-x: auto;
+  display: table;
+  width: 100%;
+  table-layout: auto;
   white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
+}
+
+table th:last-child,
+table td:last-child {
+  width: 1%;
+  white-space: nowrap;
+}
+
+table .btn-group {
+  white-space: nowrap;
+}
+
+.applications-table-wrapper {
+  width: 100%;
+}
+
+.applications-table {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.applications-table th,
+.applications-table td {
+  width: 25%;
+  vertical-align: middle;
 }
 
 /* Mobile-specific fixes */
 @media (max-width: 768px) {
   body {
     background-attachment: scroll;
+    font-size: 1rem;
+  }
+
+  .container {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .page-card,
@@ -306,10 +404,94 @@ table {
   }
 
   .page-heading {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+
+  .container > h3,
+  .container > h4 {
+    font-size: 1.65rem;
+  }
+
+  .container.py-4,
+  .container.py-5 {
+    min-height: calc(100vh - 64px);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .custom-navbar .container {
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .custom-navbar .navbar-brand {
+    font-size: 1.15rem;
+  }
+
+  .brand-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .custom-navbar .d-flex {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.35rem;
+  }
+
+  .custom-navbar .btn,
+  .custom-navbar .navbar-text {
+    font-size: 0.9rem;
+    margin-right: 0 !important;
+  }
+
+  .custom-navbar .navbar-text {
+    order: 3;
+    width: 100%;
+    text-align: right;
   }
 
   .hero-bar .display-5 {
     font-size: 1.6rem;
+  }
+
+  .applications-table {
+    display: table;
+    font-size: 0.85rem;
+  }
+
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .applications-table th,
+  .applications-table td {
+    padding: 0.55rem 0.4rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .applications-table .badge-status {
+    font-size: 0.75rem;
+  }
+
+  .card h5 {
+    font-size: 1.3rem;
+  }
+
+  .card .btn,
+  .form-control,
+  .form-select,
+  .table {
+    font-size: 1rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.65rem 0.5rem;
   }
 }

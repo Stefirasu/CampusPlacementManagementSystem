@@ -30,30 +30,32 @@ const MyApplications = () => {
       {error && <div className="alert alert-danger">{error}</div>}
       {applications.length === 0 && <p className="text-muted">You haven't applied to any jobs yet.</p>}
 
-      <table className="table table-bordered bg-white shadow-sm">
-        <thead className="table-light">
-          <tr>
-            <th>Job Title</th>
-            <th>Company</th>
-            <th>Applied On</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {applications.map((app) => (
-            <tr key={app._id}>
-              <td>{app.job?.title}</td>
-              <td>{app.job?.companyName}</td>
-              <td>{new Date(app.createdAt).toLocaleDateString()}</td>
-              <td>
-                <span className={`badge bg-${statusColor[app.status]} badge-status`}>
-                  {app.status}
-                </span>
-              </td>
+      <div className="table-responsive applications-table-wrapper">
+        <table className="table table-bordered bg-white shadow-sm applications-table">
+          <thead className="table-light">
+            <tr>
+              <th>Job Title</th>
+              <th>Company</th>
+              <th>Applied On</th>
+              <th>Status</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {applications.map((app) => (
+              <tr key={app._id}>
+                <td>{app.job?.title}</td>
+                <td>{app.job?.companyName}</td>
+                <td>{new Date(app.createdAt).toLocaleDateString()}</td>
+                <td>
+                  <span className={`badge bg-${statusColor[app.status]} badge-status`}>
+                    {app.status}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

@@ -84,7 +84,11 @@ const ManageCompanies = () => {
                 </span>
               </td>
               <td>
-                {!r.recruiterProfile?.isApproved && (
+                {r.recruiterProfile?.isApproved ? (
+                  <button className="btn btn-sm btn-outline-success" disabled>
+                    Approved
+                  </button>
+                ) : (
                   <button className="btn btn-sm btn-outline-success" onClick={() => approveRecruiter(r._id)}>
                     Approve
                   </button>

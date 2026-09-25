@@ -93,7 +93,7 @@ const Register = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
-                className="form-control"
+                className="form-control password-input"
                 value={form.password}
                 onChange={handleChange}
                 required

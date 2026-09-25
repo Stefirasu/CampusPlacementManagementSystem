@@ -50,7 +50,7 @@ const Login = () => {
             <div style={{ position: "relative" }}>
               <input
                 type={showPassword ? "text" : "password"}
-                className="form-control"
+                className="form-control password-input"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
