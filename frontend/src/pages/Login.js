@@ -80,7 +80,7 @@ const Login = () => {
           Don't have an account? <Link to="/register">Register</Link>
         </p>
         <p className="text-muted small text-center mt-2">
-          Admin login: admin@hcccampus.com / HccCPMS@2026
+          Admin login: admin@hcccpms.com / HccCPMS@2026
         </p>
       </div>
     </div>

@@ -22,7 +22,7 @@ const seedAdmin = async () => {
 
     const admin = await User.create({
       name: "Placement Admin",
-      email: "admin@hcccampus.com",
+      email: "admin@hcccpms.com",
       password: adminPassword,
       role: "admin",
     });
