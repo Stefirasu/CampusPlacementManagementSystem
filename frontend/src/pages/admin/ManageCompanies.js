@@ -22,15 +22,6 @@ const ManageCompanies = () => {
     fetchData();
   }, []);
 
-  const approveRecruiter = async (id) => {
-    try {
-      await API.put(`/admin/recruiters/${id}/approve`);
-      fetchData();
-    } catch (err) {
-      setError(err.response?.data?.message || "Failed to approve recruiter");
-    }
-  };
-
   const addCompany = async (e) => {
     e.preventDefault();
     setError("");
@@ -68,7 +59,6 @@ const ManageCompanies = () => {
             <th>Name</th>
             <th>Email</th>
             <th>Company</th>
-            <th>Approved</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -79,16 +69,9 @@ const ManageCompanies = () => {
               <td>{r.email}</td>
               <td>{r.recruiterProfile?.companyName}</td>
               <td>
-                <span className={`badge bg-${r.recruiterProfile?.isApproved ? "success" : "warning"}`}>
-                  {r.recruiterProfile?.isApproved ? "Approved" : "Pending"}
+                <span className={`badge bg-${r.recruiterProfile?.isApproved ? "success" : "danger"}`}>
+                  {r.recruiterProfile?.isApproved ? "Approved" : "Rejected"}
                 </span>
-              </td>
-              <td>
-                {!r.recruiterProfile?.isApproved && (
-                  <button className="btn btn-sm btn-outline-success" onClick={() => approveRecruiter(r._id)}>
-                    Approve
-                  </button>
-                )}
               </td>
             </tr>
           ))}
