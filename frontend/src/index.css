@@ -358,8 +358,8 @@ table {
   white-space: nowrap;
 }
 
-table th:last-child,
-table td:last-child {
+table:not(.applications-table) th:last-child,
+table:not(.applications-table) td:last-child {
   width: 1%;
   white-space: nowrap;
 }
@@ -382,6 +382,13 @@ table .btn-group {
 .applications-table td {
   width: 25%;
   vertical-align: middle;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.applications-table th:last-child,
+.applications-table td:last-child {
+  width: 25%;
 }
 
 /* Mobile-specific fixes */
